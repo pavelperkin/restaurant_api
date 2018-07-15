@@ -1,4 +1,10 @@
 FactoryBot.define do
+  factory :table do
+    restaurant
+    name Faker::GameOfThrones.house
+    min_guests 1
+    max_guests 8
+  end
   factory :guest do
     email Faker::Internet.email
     name Faker::GameOfThrones.character
