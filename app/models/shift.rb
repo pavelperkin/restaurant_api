@@ -6,6 +6,8 @@ class Shift < ApplicationRecord
   validates :restaurant_id, presence: true
   validate :from_earlier_than_to
 
+  private
+
   def from_earlier_than_to
     if Time.parse(from.to_s) > Time.parse(to.to_s)
       errors[:from] << '`From` should be before `to`'
